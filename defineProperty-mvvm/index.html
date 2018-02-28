@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>defineProperty-mvvm</title>
+</head>
+<body>
+	<div id="app">
+		{{test}}
+	</div>
+</body>
+<script type="text/javascript" src="observer.js"></script>
+<script type="text/javascript" src="watcher.js"></script>
+<script type="text/javascript" src="compile.js"></script>
+<script type="text/javascript" src="mvvm.js"></script>
+<script type="text/javascript">
+	var data = {
+		test:'hello world'
+	}
+	var vm = new MVVM({
+		data:data,
+		el: '#app'
+	})
+</script>
+</html>
