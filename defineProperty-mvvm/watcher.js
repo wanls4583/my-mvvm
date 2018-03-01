@@ -17,7 +17,10 @@ Watcher.prototype = {
     run: function() {
         var oldValue = this.value;
         var newValue = this.get();
-        this.cb.call(this.vm,newValue,oldValue);
+        if(oldValue!=newValue){
+            this.cb.call(this.vm,newValue,oldValue);
+            this.value = newValue;
+        }
     },
     addDep: function(dep) {
         if (!this.depIds.hasOwnProperty(dep.id)) {

@@ -6,7 +6,10 @@
 </head>
 <body>
 	<div id="app">
-		{{test}}
+		<p>{{hello}}</p>
+		<p v-html="html" v-on:click="clickBtn"></p>
+		<input type="text" v-model="name">
+		<p>{{name}}</p>
 	</div>
 </body>
 <script type="text/javascript" src="observer.js"></script>
@@ -15,11 +18,18 @@
 <script type="text/javascript" src="mvvm.js"></script>
 <script type="text/javascript">
 	var data = {
-		test:'hello world'
+		hello:'hello world',
+		html:'<h>测试标题</h>',
+		name:'lisong'
 	}
 	var vm = new MVVM({
 		data:data,
-		el: '#app'
+		el: '#app',
+		method: {
+			clickBtn: function(){
+				alert(this.hello);
+			}
+		}
 	})
 </script>
 </html>
