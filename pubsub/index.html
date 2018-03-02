@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pubsub-mvvm</title>
+</head>
+<body>
+	<input type="text" data-name="name">
+	<p data-name="name"></p>
+</body>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript">
+	var pb = new PubSub({
+		name: 'lisong'
+	});
+	pb.addSub('name');
+</script>
+</html>
